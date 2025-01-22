@@ -11,7 +11,7 @@ package oy.tol.tra;
  * - StackImplementation(int size), which allocates an array of Object's with size.
  *  -- remember to maintain the capacity and/or currentIndex when the stack is manipulated.
  */
-/*public class StackImplementation<E> implements StackInterface<E> {
+public class StackImplementation<E> implements StackInterface<E> {
 
    private Object [] itemArray;
    private int capacity;
@@ -22,100 +22,74 @@ package oy.tol.tra;
     * Allocates a stack with a default capacity.
     * @throws StackAllocationException
     */
-    
-   public class StackImplementation<T> implements StackInterface<T> {
-      private T[] elements;
-      private int size;
-      private static final int DEFAULT_CAPACITY = 10;
-
-      @SuppressWarnings("unchecked")
-      public StackImplementation() {
-         elements = (T[]) new Object[DEFAULT_CAPACITY];
-         size = 0;
-      }
-
-      /*public StackImplementation() throws StackAllocationException {
-         // TODO: call the constructor with size parameter with default size of 10.
-         this(DEFAULT_STACK_SIZE);
-      }*/
-
-      public StackImplementation(int capacity) throws StackAllocationException {
-         if (capacity < 2) {
-            throw new StackAllocationException("Stack size should be greater than 1");
-         }
-         try {
-            this.size = capacity;
-            //currentIndex = -1;
-            elements = (T[]) new Object[capacity];   
-         } catch (Exception e) {
-            throw new StackAllocationException(e.getMessage());
-         }
-      }
-
-      public int capacity() {
-         return elements.length;
-      }
-
-      public void push(T value) {
-         if (size == elements.length) {
-            resize(elements.length * 2);
-         }
-         elements[size++] = value;
-      }
-
-      public T pop() {
-         if (size == 0) {
-            throw new IllegalStateException("Stack is empty");
-         }
-         T value = elements[--size];
-         elements[size] = null; // Avoid memory leak
-         if (size > 0 && size == elements.length / 4) {
-            resize(elements.length / 2);
-         }
-         return value;
-      }
-
-      public T peek() {
-         if (size == 0) {
-            throw new IllegalStateException("Stack is empty");
-         }
-         return elements[size - 1];
-      }
-
-      public int size() {
-         return size;
-      }
-
-      public boolean isEmpty() {
-         return size == -1;
-      }
-
-      @SuppressWarnings("unchecked")
-      public void clear() {
-         elements = (T[]) new Object[DEFAULT_CAPACITY];
-         size = 0;
-      }
-
-      @Override
-      public String toString() {
-         StringBuilder sb = new StringBuilder();
-         sb.append("[");
-         for (int i = 0; i < size; i++) {
-            sb.append(elements[i]);
-            if (i < size - 1) {
-               sb.append(", ");
-            }
-         }
-         sb.append("]");
-         return sb.toString();
-      }
-
-      @SuppressWarnings("unchecked")
-      private void resize(int newCapacity) {
-         T[] newArray = (T[]) new Object[newCapacity];
-         for (int i = 0; i < size; i++) {
-            newArray[i] = elements[i];
-         }
-         elements = newArray;
-      }
+   public StackImplementation() throws StackAllocationException {
+      // TODO: call the constructor with size parameter with default size of 10.
+      
    }
+
+   /** TODO: Implement so that
+    * - if the size is less than 2, throw StackAllocationException
+    * - if the allocation of the array throws with Java exception,
+    *   throw StackAllocationException.
+    * @param capacity The capacity of the stack.
+    * @throws StackAllocationException If cannot allocate room for the internal array.
+    */
+   public StackImplementation(int capacity) throws StackAllocationException {
+      
+   }
+
+   @Override
+   public int capacity() {
+      // TODO: Implement this
+      
+   }
+
+   @Override
+   public void push(E element) throws StackAllocationException, NullPointerException {
+      // TODO: Implement this
+               
+   }
+
+   @SuppressWarnings("unchecked")
+   @Override
+   public E pop() throws StackIsEmptyException {
+      // TODO: Implement this
+   }
+
+   @SuppressWarnings("unchecked")
+   @Override
+   public E peek() throws StackIsEmptyException {
+      // TODO: Implement this
+   }
+
+   @Override
+   public int size() {
+      // TODO: Implement this
+      
+   }
+
+   @Override
+   public void clear() {
+      // TODO: Implement this
+      
+   }
+
+   @Override
+   public boolean isEmpty() {
+      // TODO: Implement this
+      
+   }
+
+   @Override
+   public String toString() {
+      StringBuilder builder = new StringBuilder("[");
+      for (var index = 0; index <= currentIndex; index++) {
+         builder.append(itemArray[index].toString());
+         if (index < currentIndex) {
+            builder.append(", ");
+         }
+      }
+      builder.append("]");
+      return builder.toString();
+   }
+}
