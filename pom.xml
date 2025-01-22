@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>data-algo</groupId>
-  <artifactId>04-1-stack</artifactId>
+  <artifactId>02-stack</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>04-1-stack</name>
-  <url>https://opas.peppi.oulu.fi/fi/opintojakso/811312A/4550?period=2020-2021</url>
+  <name>02-stack</name>
+  <!--<url>https://opas.peppi.oulu.fi/fi/opintojakso/811312A/4550?period=2020-2021</url>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
