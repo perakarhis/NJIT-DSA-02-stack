@@ -1,6 +1,6 @@
 # Stack exercise
 
-Data structures and algorithms 2024.
+Data structures and algorithms.
 
 ## The goal of task 1
 
@@ -86,6 +86,7 @@ This example stack was created by calling `stack.push(110)`, `stack.push(119)` a
 ```
 mvn -Dtest=StackTests test
 ```
+In VScode run the test from the lab bottle (Erlenmeyer flask) button in the left panel, like in the previoius task.
 
 If the tests do not pass, you will see errors. Otherwise you will see that the tests succeed. If you have issues, fix your stack implementation and try again.
 
